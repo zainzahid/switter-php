@@ -6,5 +6,13 @@
   			<?php displayTweets('public'); ?>
   		</div>
 
+  		<div class="col-md-4">
+
+            <?php
+            displaySearchBox();
+            displayTweetBox(); ?>
+
+  		</div>
+
 	</div>
 </div>

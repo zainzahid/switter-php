@@ -15,6 +15,11 @@ else if ( array_key_exists("page",$_GET) AND $_GET["page"] == "mytweets"
     include ("Views/mytweets.php");
 }
 
+else if(  array_key_exists("page",$_GET) AND $_GET["page"] == "search" )
+{
+    include ("Views/search.php");
+}
+
 else
 {
     include("Views/home.php");

@@ -116,4 +116,26 @@ include("functions.php");
         }
     }
 
+    if( $_GET["action"] == "postTweet" )
+    {
+        if( !$_POST["tweetContent"] )
+        {
+            echo "Your Tweet is empty";
+        }
+        else if ( strlen( $_POST["tweetContent"] ) > 140 )
+        {
+            echo "Your tweet is too long";
+        }
+        else
+        {
+           $query ="INSERT INTO tweets 
+                VALUES(NULL,'".mysqli_real_escape_string($link,$_POST["tweetContent"])
+                ."','".mysqli_real_escape_string($link,$_SESSION["email"])."',NOW())";
+            if(mysqli_query($link, $query))
+                echo "1";
+            else
+                echo "2";
+        }
+    }
+
 ?>

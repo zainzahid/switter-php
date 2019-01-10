@@ -104,7 +104,7 @@
 					.time_since(time()-strtotime($row["datetime"]))."</p>";
 					echo "<p>".$row["tweet"]."</p>";
 
-					if ( array_key_exists('email',$_SESSION) AND $_SESSION['email'] ) {
+					if ( array_key_exists('sid',$_SESSION) AND $_SESSION['sid'] ) {
                         echo "<a class='btn btn-success text-white toggleFollow' data-email='"
                             . $row["email"] . "'>";
                         $isFollowingQuery = "SELECT * FROM isfollowing WHERE follower='" .
@@ -129,7 +129,7 @@
 
 		function displayTweetBox()
         {
-            if ( array_key_exists('email',$_SESSION) AND $_SESSION['email'] )
+            if ( array_key_exists('sid',$_SESSION) AND $_SESSION['sid'] )
             {
                 echo '<div class="alert alert-success" style="display:none;" id="tweetSuccess" >
                 Tweet Posted Successfully</div>

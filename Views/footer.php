@@ -86,7 +86,6 @@
   })
 
   $(".toggleFollow").click(function () {
-      alert('cliked');
       $email = $(this).attr("data-email");
       $.ajax({
           method: "POST",

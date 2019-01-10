@@ -51,7 +51,8 @@ include("functions.php");
             					email='".$email."'";
             			if(mysqli_query($link,$query)) 
             			{
-                			echo "1";
+							echo "1";
+							$_SESSION['sid']=session_id() ;
                 			$_SESSION['email']=$email;
             			}
             		}
@@ -70,7 +71,8 @@ include("functions.php");
         			$hashedPassword = md5(md5($_POST['email']).$_POST['password']);
         			if ($hashedPassword == $row['password'])
         			{
-            			echo "1";
+						echo "1";
+						$_SESSION['sid']=session_id() ;
             			$_SESSION['email']=$_POST['email'];
     				}
     				else
@@ -91,6 +93,7 @@ include("functions.php");
 		}
 	}
 
+	//_________Follow/Unfollow Action________
 	if( $_GET["action"] == "toggleFollow" )
     {
         $query="SELECT * FROM isfollowing WHERE follower='".
@@ -116,6 +119,7 @@ include("functions.php");
         }
     }
 
+	//_________Post a Tweet Action________
     if( $_GET["action"] == "postTweet" )
     {
         if( !$_POST["tweetContent"] )

@@ -26,7 +26,7 @@
       </li>
       <li class="nav-item">
           <?php
-          if( array_key_exists('email',$_SESSION) AND $_SESSION['email'] )
+          if( array_key_exists('sid',$_SESSION) AND $_SESSION['sid'] )
           { ?>
             <a class="nav-link" href="?page=mytweets">My Tweets</a>
           <?php }
@@ -40,7 +40,7 @@
     </ul>
   </div>
   <div class="form-inline my-2 my-lg-0">
-  		<?php if(array_key_exists("email",$_SESSION) AND $_SESSION["email"]){ ?>
+  		<?php if(array_key_exists("sid",$_SESSION) AND $_SESSION["sid"]){ ?>
   			<button class="btn btn-outline-success my-2 my-sm-0" type="button" onclick="window.location.href='?function=logout'" >Logout</button> 		
       <?php } else{ ?>
       <button class="btn btn-outline-success my-2 my-sm-0" type="button" data-toggle="modal"
